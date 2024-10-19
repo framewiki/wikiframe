@@ -4,10 +4,12 @@
 
 body {
   /* background-color: #fff; */
-  padding: 50px;
   font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #727272;
   font-weight: 400;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-right: 50px;
 }
 
 h1,
@@ -146,6 +148,7 @@ img {
   overflow-x: auto;*/
   max-height: 100%;
   padding-bottom: 55px !important;
+  margin-left: 50px;
 }
 
 @media print,
@@ -155,12 +158,10 @@ screen and (max-width: 992px) {
     top: 50px;
     border-right: 1px solid;
     border-bottom: 1px solid;
-    border-radius: 10px;
+    margin-left: 25px;
+    padding-right: 25px;
   }
 
-  .git-wiki-page {
-    margin-top: 60px;
-  }
 }
 
 .git-wiki-main-logo {
@@ -231,6 +232,7 @@ strong {
   float:right;*/
   padding-left: 320px;
   padding-bottom: 50px;
+  margin-left: 50px;
 }
 
 small {
@@ -246,6 +248,7 @@ hr {
 
 footer {
   padding-left: 320px;
+  margin-left: 50px;
   float: left;
   bottom: 50px;
   -webkit-font-smoothing: subpixel-antialiased;
@@ -257,7 +260,7 @@ footer {
 }
 
 @media print,
-screen and (max-width: 960px) {
+screen and (max-width: 992px) {
 
   div.wrapper {
     width: auto;
@@ -272,16 +275,12 @@ screen and (max-width: 960px) {
     width: auto;
   }
 
-  #git-wiki-sidebar {
-    padding-right: 320px;
-  }
-
   .git-wiki-page,
   footer {
     border: 1px solid #e5e5e5;
     border-width: 1px 0;
     padding: 20px 0;
-    margin: 60px 0 20px;
+    margin: 0 0 20px 50px;
   }
 
   #git-wiki-sidebara small {
