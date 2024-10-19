@@ -100,8 +100,10 @@ pre {
 }
 
 table {
+  display: block;
   width: 100%;
   border-collapse: collapse;
+  overflow-x: auto;
 }
 
 th,
