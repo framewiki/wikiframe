@@ -234,6 +234,9 @@ strong {
   padding-bottom: 50px;
   margin-left: 50px;
 }
+.git-wiki-page-main {
+  max-width: 1200px;
+}
 
 small {
   font-size: 11px;
@@ -326,7 +329,7 @@ screen and (max-width: 480px) {
     width: 99%;
   }
 
-  #git-wiki-sidebarli,
+  #git-wiki-sidebar li,
   #git-wiki-sidebar .git-wiki-downloads li+li+li {
     width: 33%;
   }
