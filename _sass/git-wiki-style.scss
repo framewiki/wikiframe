@@ -390,11 +390,6 @@ screen and (max-width: 480px) {
   z-index: 500;
 }
 
-/* disable dark mode on images */
-body.darkmode--activated img, body.darkmode--activated .darkmode-ignore {
-  mix-blend-mode: difference;
-}
-
 /* Notes above pages */
 .note {
   background-color: #f7f7f7;
