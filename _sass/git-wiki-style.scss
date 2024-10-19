@@ -390,6 +390,12 @@ screen and (max-width: 480px) {
   z-index: 500;
 }
 
+/* disable dark mode on images */
+//(change .wrapper-darkmode to body to apply to header as well)
+.wrapper.darkmode--activated img, .wrapper.darkmode--activated .darkmode-ignore {
+  mix-blend-mode: difference;
+}
+
 /* Notes above pages */
 .note {
   background-color: #f7f7f7;
