@@ -261,6 +261,10 @@ strong {
 
 #git-wiki-toc li > ol {
   padding-left: 25px;
+}
+
+li > ol,
+li > ul {
   margin-bottom: 0;
 }
 
