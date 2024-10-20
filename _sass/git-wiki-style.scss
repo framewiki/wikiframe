@@ -76,6 +76,15 @@ a:hover small {
   color: #777;
 }
 
+.task-list {
+  padding-left: 10px;
+  list-style: none;
+}
+
+.task-list-item-checkbox {
+  margin-right: 10px;
+}
+
 .wrapper {
   /*width:860px;*/
   margin: 0 auto;
