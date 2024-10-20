@@ -250,6 +250,21 @@ strong {
   max-width: 900px;
 }
 
+#git-wiki-toc {
+  padding-left: 0;
+}
+
+#git-wiki-toc li {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+#git-wiki-toc li > ol {
+  padding-left: 25px;
+  margin-bottom: 0;
+}
+
 small {
   font-size: 11px;
 }
