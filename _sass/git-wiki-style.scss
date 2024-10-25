@@ -1,4 +1,4 @@
-@import "fonts";
+`@import "fonts";
 @import "rouge-github";
 @import "w3.scss";
 
@@ -114,7 +114,6 @@ pre {
 
 table {
   display: block;
-  width: 100%;
   border-collapse: collapse;
   overflow-x: auto;
 }
