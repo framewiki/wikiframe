@@ -336,6 +336,18 @@ screen and (max-width: 992px) {
   }*/
 }
 
+.footnotes {
+  font-size: 80%;
+  overflow-wrap: break-word;
+}
+
+@media print,
+screen and (min-width: 480px) {
+  .footnotes {
+    column-count: 2;
+  }
+}
+
 
 @media print,
 screen and (max-width: 720px) {
