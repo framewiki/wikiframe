@@ -13,16 +13,6 @@ body {
   padding-bottom: 50px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #222;
-  margin: 0 0 20px;
-}
-
 p,
 ul,
 ol,
@@ -34,9 +24,23 @@ dl {
 
 h1,
 h2,
+h3,
+h4,
+h5,
+h6 {
+  color: black;
+  margin: 0 0 20px;
+  font-family: "Segoe UI",Arial,sans-serif;
+  margin: 10px 0;
+  font-weight: 400;
+}
+
+h1,
+h2,
 h3 {
   line-height: 1.1;
 }
+
 
 h1 {
   font-size: 36px;
@@ -45,15 +49,29 @@ h1 {
 }
 
 h2 {
-  color: #393939;
+  font-size: 26px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid gray;
 }
 
-h3,
-h4,
-h5,
-h6 {
-  color: #494949;
+h3 {
+  font-size: 18px;
+  font-weight: bold !important;
 }
+
+h4 {
+  font-size: 18px
+}
+
+h5 {
+  font-size: 16px
+}
+
+h6 {
+  font-size: 14px
+}
+
+
 
 a {
   color: #39c;
