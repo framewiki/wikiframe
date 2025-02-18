@@ -17,7 +17,7 @@
 {% if page.excerpt %}
     {% assign excerpt = page.excerpt %}
 {% else %}
-{% assign lines = page.content | newline_to_br | split: "<br />" %}
+    {% assign lines = page.content | newline_to_br | split: "<br />" %}
     {% for line in lines %}
     {% assign trimmed = line | strip %}
     {% if trimmed != "" %}
@@ -29,6 +29,22 @@
     {% endfor %}
 {% endif %}
 {% assign description = excerpt | strip_html | strip_newlines%}
+
+{% if page.image %}
+    {% assign image = page.image %}
+{% elsif page.sidecar%}
+    {% for i in page.sidecar %}
+        {% if i.image %}
+            {% assign image = i.image %}
+            {% break %}
+        {% endif %}
+    {% endfor %}
+{% else %}
+    {% assign image = site.logo_url %}
+{% endif %}
+{% if image %}
+    {% assign image_url = image | absolute_url %}
+{% endif %}
 
 <!-- Begin Meta Tags -->
 <title>{{title}} | {{site.title}}</title>
@@ -49,12 +65,9 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-{% if page.image %}
-<meta property="og:image" content="{{page.image | absolute_url }}" />
-<meta name="twitter:image" content="{{page.image | absolute_url }}" />
-{% elsif site.logo_url %}
-<meta property="og:image" content="{{ site.logo_url | absolute_url }}" />
-<meta name="twitter:image" content="{{ site.logo_url | absolute_url }}" />
+{% if image_url %}
+<meta property="og:image" content="{{image_url}}" />
+<meta name="twitter:image" content="{{image_url}}" />
 {% endif %}
 <!-- End OpenGraph Tags-->
 
