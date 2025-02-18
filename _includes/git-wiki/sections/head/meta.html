@@ -38,7 +38,12 @@
 <!-- Begin OpenGraph Tags-->
 <meta property="og:title" content="{{title}}">
 <meta property="og:description" content="{{description}}">
-<meta property="og:site_name" content="{{site.title}}: {{site.description}}">
+{% if site.short_description %}
+    <meta property="og:site_name" content="{{site.title}}: {{site.short_description}}">
+{% else %}
+    <meta property="og:site_name" content="{{site.title}}: {{site.description}}">
+{% endif %}
+
 <meta property="og:url"
   content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
 <meta property="og:locale" content="en_US">
