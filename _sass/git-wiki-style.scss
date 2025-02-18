@@ -1,6 +1,8 @@
 @import "fonts";
 @import "rouge-github";
 @import "w3.scss";
+@import "notes";
+@import "sidecars";
 
 body {
   /* background-color: #fff; */
@@ -444,7 +446,6 @@ screen and (max-width: 480px) {
   padding-right: 13px;
 }
 
-
 /* 
   dark mode
   https://darkmodejs.learn.uno/#debug 
@@ -456,22 +457,4 @@ screen and (max-width: 480px) {
 /* disable dark mode on images */
 body.darkmode--activated img, body.darkmode--activated .darkmode-ignore {
   mix-blend-mode: difference;
-}
-
-/* Notes above pages */
-.note {
-  background-color: #f7f7f7;
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin-bottom: 20px;
-  display: flex;
-}
-
-.note p {
-  margin-bottom: 0px
-}
-
-.note img {
-  height: 40px;
-  margin-right: 20px;
 }
