@@ -6,32 +6,52 @@
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 <meta name="viewport" content="width=device-width">
 
-{% seo %}
+{% if page.title %}
+    {% assign pagetitle = page.title %}
+{% else %}
+    {% assign pagetitle = site.title %}
+{% endif %}
+{% assign title = pagetitle | strip_html | strip_newlines | truncate: 160 %}
 
-{% assign pagetitle = page.name | replace: ".md", "" %}
-{% assign title = pagetitle | append: " - " | append: site.title  | strip_html %}
+{% assign excerpt = "" %}
+{% if page.excerpt %}
+    {% assign excerpt = page.excerpt %}
+{% else %}
+{% assign lines = page.content | newline_to_br | split: "<br />" %}
+    {% for line in lines %}
+    {% assign trimmed = line | strip %}
+    {% if trimmed != "" %}
+        {% unless trimmed contains "#" or trimmed contains "{%" %}
+            {% assign excerpt = trimmed | markdownify %}
+            {% break %}
+        {% endunless %}
+    {% endif %}
+    {% endfor %}
+{% endif %}
+{% assign description = excerpt | strip_html | strip_newlines%}
 
-<title>{{ title | strip_html | strip_newlines | truncate: 160 }}</title>
+<!-- Begin Meta Tags -->
+<title>{{title}} | {{site.title}}</title>
+<meta name="description" content="{{description}}">
+<!-- End Meta Tags -->
 
-<meta property="og:title" content="{{ title | strip_html | strip_newlines | truncate: 160 }}">
-
-<meta property="og:description" content="{% if page.excerpt %}
-        {{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}
-      {% else %}
-        {{ site.description }}
-      {% endif %}">
-
-
+<!-- Begin OpenGraph Tags-->
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:site_name" content="{{site.title}}: {{site.description}}">
 <meta property="og:url"
   content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
-
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 {% if page.image %}
-<meta property="og:image" content="{{page.image}}" />
-<meta name="twitter:image" content="{{page.image}}" />
+<meta property="og:image" content="{{page.image | absolute_url }}" />
+<meta name="twitter:image" content="{{page.image | absolute_url }}" />
 {% elsif site.logo_url %}
-<meta property="og:image" content="{{ site.logo_url | relative_url }}" />
-<meta name="twitter:image" content="{{ site.logo_url | relative_url }}" />
+<meta property="og:image" content="{{ site.logo_url | absolute_url }}" />
+<meta name="twitter:image" content="{{ site.logo_url | absolute_url }}" />
 {% endif %}
+<!-- End OpenGraph Tags-->
 
 
 {% if site.inc_after_meta %}
