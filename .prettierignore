@@ -1,3 +1,6 @@
 .github/*
 pnpm-lock.yaml
-w3.scss
+
+# Third-party:
+_scss/w3.scss
+_includes/git-wiki/components/toc/toc-lib.html
