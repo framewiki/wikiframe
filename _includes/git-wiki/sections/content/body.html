@@ -4,7 +4,11 @@
         darkModeSetBodyBg()
     </script>
     
-    {% include git-wiki/sections/content/wrapper.html %}
+    {% include git-wiki/sections/header.html %}
+    <div class="wrapper">
+        {% include git-wiki/sections/content/content.html %}
+        {% include git-wiki/sections/footer.html %}
+    </div>
 
     {% include git-wiki/sections/tail.html %}
 </body>
