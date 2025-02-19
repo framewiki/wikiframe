@@ -2,5 +2,8 @@
 pnpm-lock.yaml
 
 # Third-party:
-_scss/w3.scss
+_sass/w3.scss
 _includes/git-wiki/components/toc/toc-lib.html
+assets/js/jquery.camelhunter.min.js
+assets/js/simple-jekyll-search.min.js
+assets/js/searchdata.js
