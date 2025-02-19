@@ -1,6 +1,7 @@
 @import "fonts";
-@import "rouge-github";
 @import "w3.scss";
+@import "notes";
+@import "sidecars";
 
 body {
   /* background-color: #fff; */
@@ -29,7 +30,7 @@ h4,
 h5,
 h6 {
   color: black;
-  font-family: "Segoe UI",Arial,sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-weight: 400;
   margin-top: 1em !important;
 }
@@ -39,7 +40,6 @@ h2,
 h3 {
   line-height: 1.1;
 }
-
 
 h1 {
   font-size: 36px;
@@ -59,18 +59,16 @@ h3 {
 }
 
 h4 {
-  font-size: 18px
+  font-size: 18px;
 }
 
 h5 {
-  font-size: 16px
+  font-size: 16px;
 }
 
 h6 {
-  font-size: 14px
+  font-size: 14px;
 }
-
-
 
 a {
   color: #39c;
@@ -115,7 +113,16 @@ blockquote {
 
 code,
 pre {
-  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+  font-family:
+    Monaco,
+    Bitstream Vera Sans Mono,
+    Lucida Console,
+    Terminal,
+    Consolas,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Courier New,
+    monospace;
   color: #333;
   font-size: 12px;
 }
@@ -182,8 +189,7 @@ img {
   margin-left: 50px;
 }
 
-@media print,
-screen and (max-width: 992px) {
+@media print, screen and (max-width: 992px) {
   #git-wiki-sidebar {
     position: fixed !important;
     top: 50px;
@@ -192,13 +198,12 @@ screen and (max-width: 992px) {
     margin-left: 20px;
     padding-right: 25px;
   }
-
 }
 
 .git-wiki-main-logo {
   max-width: 270px;
 }
-.git-wiki-main-logo h1{
+.git-wiki-main-logo h1 {
   font-size: 28px;
   padding-bottom: 0px;
   border-bottom: none;
@@ -252,7 +257,7 @@ strong {
   font-weight: 700;
 }
 
-#git-wiki-sidebar .git-wiki-downloads li+li+li {
+#git-wiki-sidebar .git-wiki-downloads li + li + li {
   border-right: none;
   width: 89px;
 }
@@ -318,9 +323,7 @@ footer {
   padding-right: 10px;
 }
 
-@media print,
-screen and (max-width: 992px) {
-
+@media print, screen and (max-width: 992px) {
   div.wrapper {
     width: auto;
     margin: 0;
@@ -358,16 +361,13 @@ screen and (max-width: 992px) {
   overflow-wrap: break-word;
 }
 
-@media print,
-screen and (min-width: 480px) {
+@media print, screen and (min-width: 480px) {
   .footnotes {
     column-count: 2;
   }
 }
 
-
-@media print,
-screen and (max-width: 720px) {
+@media print, screen and (max-width: 720px) {
   body {
     word-wrap: break-word;
   }
@@ -395,8 +395,7 @@ screen and (max-width: 720px) {
   }
 }
 
-@media print,
-screen and (max-width: 480px) {
+@media print, screen and (max-width: 480px) {
   .git-wiki-page,
   footer {
     margin: 0 20px 20px 20px;
@@ -440,38 +439,22 @@ screen and (max-width: 480px) {
   background-position: center right;
   background-repeat: no-repeat;
   background-image: url("../images/external-link-ltr-icon.png");
-  background-image: linear-gradient(transparent, transparent), url("../images/external.svg");
+  background-image:
+    linear-gradient(transparent, transparent), url("../images/external.svg");
   padding-right: 13px;
 }
-
 
 /* 
   dark mode
   https://darkmodejs.learn.uno/#debug 
 */
-.darkmode-layer, .darkmode-toggle {
+.darkmode-layer,
+.darkmode-toggle {
   z-index: 500;
 }
 
 /* disable dark mode on images */
-body.darkmode--activated img, body.darkmode--activated .darkmode-ignore {
+body.darkmode--activated img,
+body.darkmode--activated .darkmode-ignore {
   mix-blend-mode: difference;
-}
-
-/* Notes above pages */
-.note {
-  background-color: #f7f7f7;
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin-bottom: 20px;
-  display: flex;
-}
-
-.note p {
-  margin-bottom: 0px
-}
-
-.note img {
-  height: 40px;
-  margin-right: 20px;
 }

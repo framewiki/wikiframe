@@ -1,0 +1,17 @@
+/* Notes above pages */
+.note {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.note p {
+  margin-bottom: 0px;
+}
+
+.note img {
+  height: 40px;
+  margin-right: 20px;
+}
