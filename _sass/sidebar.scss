@@ -50,11 +50,12 @@
     }
     .sidebar > div:first-of-type {
         margin-top: 100px;
+        margin-bottom: 100px;
         margin-left: 50px;
     }
 
 }
-@media screen and (min-width: $medium) {
+@media screen and (min-width: calc($medium + 1px)) {
     .sidebar {
         display: block !important;
     }
