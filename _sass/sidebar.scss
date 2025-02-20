@@ -55,8 +55,8 @@
     }
 
 }
-@media screen and (min-width: calc($medium + 1px)) {
-    .sidebar {
+@media screen and (min-width: $medium + 1px) {
+    #git-wiki-sidebar {
         display: block !important;
     }
 }
