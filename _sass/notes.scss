@@ -1,10 +1,18 @@
 /* Notes above pages */
 .note {
-  background-color: #f7f7f7;
-  border: 1px solid #ddd;
+  background-color: $accent-bg-color-light;
+  border: $border-style;
+  border-color: $accent-border-color-light;
   padding: 20px;
   margin-bottom: 20px;
   display: flex;
+}
+
+@media (prefers-color-scheme: dark) {
+  .note {
+    background-color: $accent-bg-color-dark;
+    border-color: $accent-border-color-dark;
+  }
 }
 
 .note p {
