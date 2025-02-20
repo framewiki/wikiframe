@@ -1,20 +1,18 @@
-<div class=" w3-xlarge w3-hide-large" id="git-wiki-mobile-header">
-  <button class="w3-button w3-teal" onclick="sidebar_toggle()">&#9776;</button>
+<div class="header">
+  <button class="w3-button" onclick="sidebar_toggle()">&#9776;</button>
   <a href="{{ '/' | relative_url }}">
-    {% if site.logo_url %}
-    <img src="{{ site.logo_url | relative_url }}" width="20px">
-    {% endif %}
     {{ site.title | escape }}
   </a>
 </div>
-<header class="w3-sidebar w3-bar-block w3-collapse" id="git-wiki-sidebar">
+
+
+<header class="sidebar" id="git-wiki-sidebar">
   <div>
-    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="sidebar_toggle()">Close &times;</button>
     {% if site.inc_before_header %}
     {% include {{ site.inc_before_header }} %}
     {% endif %}
 
-    <div class="w3-hide-medium w3-hide-small">
+    <div>
       <div class="git-wiki-main-logo">
         <a href="{{ '/' | relative_url }}">
           {% if site.logo_url %}
@@ -26,38 +24,41 @@
       </div>
     </div>
 
+    <div class="w3-margin-top	">
+      {% if site.github.is_user_page %}
+      <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
+      {% endif %}
+      {% include git-wiki/components/toc/toc.html %}
 
-    {% if site.github.is_user_page %}
-    <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
-    {% endif %}
+      {% if site.show_wiki_pages %}
+      {% include git-wiki/components/lists/page-list.html %}
+      {% endif %}
 
-    {% if site.show_downloads %}
-    {% include git-wiki/components/downloads.html %}
-    {% endif %}
+      {% if site.blog_feature and site.show_wiki_posts %}
+      {% include git-wiki/components/lists/post-list.html %}
+      {% endif %}
 
-    {% include git-wiki/components/toc/toc.html %}
+      {% if site.show_downloads %}
+      {% include git-wiki/components/downloads.html %}
+      {% endif %}
 
-    {% if site.show_wiki_pages %}
-    {% include git-wiki/components/lists/page-list.html %}
-    {% endif %}
-
-    {% if site.blog_feature and site.show_wiki_posts %}
-    {% include git-wiki/components/lists/post-list.html %}
-    {% endif %}
-
-    {% if site.inc_after_header %}
-    {% include {{ site.inc_after_header }} %}
-    {% endif %}
+      {% if site.inc_after_header %}
+      {% include {{ site.inc_after_header }} %}
+      {% endif %}
+    </div>
   </div>
 </header>
 <script>
   function sidebar_toggle() {
     var sidebar = document.getElementById("git-wiki-sidebar");
+    var button = document.querySelector(".w3-button");
+
     if (sidebar.style.display == "block") {
       sidebar.style.display = "none";
-      sidebar.style.position = "inherit";
+      button.textContent = "☰"; // Set back to ☰ when closing
     } else {
       $(sidebar).attr('style', 'display: block;');
+      button.textContent = "✕"; // Change to ☒ when opening
     }
   }
 </script>

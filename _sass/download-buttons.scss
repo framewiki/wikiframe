@@ -1,0 +1,65 @@
+
+#git-wiki-sidebar .git-wiki-downloads {
+    list-style: none;
+    height: 40px;
+    padding: 0;
+    background: $accent-bg-color-light;
+    border-radius: 5px;
+    border: $border-style;
+    border-color: $accent-border-color-light;
+    width: 270px;
+  }
+@media (prefers-color-scheme: dark) {
+  #git-wiki-sidebar .git-wiki-downloads {
+    background-color: $accent-bg-color-dark;
+    border-color: $accent-border-color-dark;
+  }
+}
+
+  
+  #git-wiki-sidebar .git-wiki-downloads li {
+    width: 89px;
+    float: left;
+    border-right: $border-style;
+    border-color: $accent-border-color-light;
+    height: 40px;
+  }
+  @media (prefers-color-scheme: dark) {
+    #git-wiki-sidebar .git-wiki-downloads li {
+      border-color: $accent-border-color-dark;
+    }
+  }
+  
+  #git-wiki-sidebar .git-wiki-downloads li:first-child a {
+    border-radius: 5px 0 0 5px;
+  }
+  
+  #git-wiki-sidebar .git-wiki-downloads li:last-child a {
+    border-radius: 0 5px 5px 0;
+  }
+  
+  #git-wiki-sidebar .git-wiki-downloads a {
+    line-height: 1;
+    font-size: 11px;
+    color: #999;
+    display: block;
+    text-align: center;
+    padding-top: 6px;
+    height: 34px;
+  }
+
+  #git-wiki-sidebar .git-wiki-downloads li + li + li {
+    border-right: none;
+    width: 89px;
+  }
+  
+  #git-wiki-sidebar .git-wiki-downloads a strong {
+    font-size: 14px;
+    display: block;
+    color: $bold-text-color-light;
+  }
+  @media (prefers-color-scheme: dark) {
+    #git-wiki-sidebar .git-wiki-downloads a strong {
+      color: $bold-text-color-dark;
+    }
+  }
