@@ -1,10 +1,11 @@
 @import "fonts";
 @import "w3.scss";
+@import "variables";
 @import "notes";
 @import "sidecars";
+@import "download-buttons";
 
 body {
-  /* background-color: #fff; */
   font-size: 1rem;
   font-family: "Merriweather Sans", sans-serif;
   font-style: normal;
@@ -12,6 +13,14 @@ body {
   font-weight: 300;
   padding-top: 50px;
   padding-bottom: 50px;
+  background-color: $bg-color-light;
+  color: $text-color-light;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+      background-color: $bg-color-dark;
+      color: $text-color-dark;
+  }
 }
 
 p,
@@ -29,7 +38,6 @@ h3,
 h4,
 h5,
 h6 {
-  color: black;
   font-family: "Segoe UI", Arial, sans-serif;
   font-weight: 400;
   margin-top: 1em !important;
@@ -44,13 +52,25 @@ h3 {
 h1 {
   font-size: 36px;
   padding-bottom: 5px;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid;
+  border-color: $border-color-light;
+}
+@media (prefers-color-scheme: dark) {
+  h1 {
+    border-color: $border-color-dark;
+  }
 }
 
 h2 {
   font-size: 26px;
   padding-bottom: 8px;
-  border-bottom: 1px solid gray;
+  border-bottom: $border-style;
+  border-color: $border-color-light;
+}
+@media (prefers-color-scheme: dark) {
+  h2 {
+    border-color: $border-color-dark;
+  }
 }
 
 h3 {
@@ -105,7 +125,7 @@ a:hover small {
 }
 
 blockquote {
-  border-left: 1px solid #e5e5e5;
+  border-left: $border-style #e5e5e5;
   margin: 0;
   padding: 0 0 0 20px;
   font-style: italic;
@@ -123,15 +143,22 @@ pre {
     DejaVu Sans Mono,
     Courier New,
     monospace;
-  color: #333;
+  color: $bold-text-color-light;
   font-size: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  code,
+  pre {
+      color: $bold-text-color-dark;
+  }
 }
 
 pre {
   padding: 8px 15px;
   background: #f8f8f8;
   border-radius: 5px;
-  border: 1px solid #e5e5e5;
+  border: $border-style #e5e5e5;
   overflow-x: auto;
 }
 
@@ -146,35 +173,65 @@ th,
 td {
   text-align: left;
   padding: 5px 10px;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: $border-style #e5e5e5;
 }
 
 dt {
-  color: #444;
+  color: $bold-text-color-light;
   font-weight: 700;
+}
+@media (prefers-color-scheme: dark) {
+  dt {
+    color: $bold-text-color-dark;
+  }
 }
 
 th {
-  color: #444;
+  color: $bold-text-color-light;
+}
+@media (prefers-color-scheme: dark) {
+  th {
+    color: $bold-text-color-dark;
+  }
 }
 
 img {
   max-width: 100%;
 }
 
-.w3-teal {
-  color: #000 !important;
-  background-color: inherit !important;
+strong {
+  color: $bold-text-color-light;
+  font-weight: 700;
 }
+@media (prefers-color-scheme: dark) {
+  strong {
+    color: $bold-text-color-dark;
+  }
+}
+
+.highlight {
+  background-color: $accent-bg-color-light;
+}
+@media (prefers-color-scheme: dark) {
+  .highlight {
+    background-color: $accent-bg-color-dark;
+  }
+}
+
+
 
 #git-wiki-mobile-header {
   position: fixed;
   top: 0;
   height: 55px;
-  background-color: white;
+  background-color: $bg-color-light;
   width: 100%;
-  border-bottom: 1px solid;
   z-index: 499;
+}
+@media (prefers-color-scheme: dark) {
+  #git-wiki-mobile-header {
+    background-color: $bg-color-dark;
+  }
 }
 
 #git-wiki-sidebar {
@@ -182,19 +239,22 @@ img {
   float: left;
   position: relative !important;
   -webkit-font-smoothing: subpixel-antialiased;
-  /*overflow-y: auto;
-  overflow-x: auto;*/
   max-height: 100%;
   padding-bottom: 55px !important;
   margin-left: 50px;
+}
+@media (prefers-color-scheme: dark) {
+  #git-wiki-sidebar {
+      background-color: $bg-color-dark;
+  }
 }
 
 @media print, screen and (max-width: 992px) {
   #git-wiki-sidebar {
     position: fixed !important;
     top: 50px;
-    border-right: 1px solid;
-    border-bottom: 1px solid;
+    border-right: $border-style;
+    border-bottom: $border-style;
     margin-left: 20px;
     padding-right: 25px;
   }
@@ -203,69 +263,21 @@ img {
 .git-wiki-main-logo {
   max-width: 270px;
 }
+
 .git-wiki-main-logo h1 {
   font-size: 28px;
   padding-bottom: 0px;
   border-bottom: none;
+  color: $text-color-light;
+}
+@media (prefers-color-scheme: dark) {
+  .git-wiki-main-logo h1 {
+      color: $text-color-dark;
+  }
 }
 
-#git-wiki-sidebar .git-wiki-downloads {
-  list-style: none;
-  height: 40px;
-  padding: 0;
-  background: #f4f4f4;
-  border-radius: 5px;
-  border: 1px solid #e0e0e0;
-  width: 270px;
-}
-
-#git-wiki-sidebar .git-wiki-downloads li {
-  width: 89px;
-  float: left;
-  border-right: 1px solid #e0e0e0;
-  height: 40px;
-}
-
-#git-wiki-sidebar .git-wiki-downloads li:first-child a {
-  border-radius: 5px 0 0 5px;
-}
-
-#git-wiki-sidebar .git-wiki-downloads li:last-child a {
-  border-radius: 0 5px 5px 0;
-}
-
-#git-wiki-sidebar .git-wiki-downloads a {
-  line-height: 1;
-  font-size: 11px;
-  color: #999;
-  display: block;
-  text-align: center;
-  padding-top: 6px;
-  height: 34px;
-}
-
-#git-wiki-sidebar .git-wiki-downloads a:hover {
-  color: #999;
-}
-
-#git-wiki-sidebar .git-wiki-downloads a:active {
-  background-color: #f0f0f0;
-}
-
-strong {
-  color: #222;
-  font-weight: 700;
-}
-
-#git-wiki-sidebar .git-wiki-downloads li + li + li {
-  border-right: none;
-  width: 89px;
-}
-
-#git-wiki-sidebar .git-wiki-downloads a strong {
-  font-size: 14px;
-  display: block;
-  color: #222;
+.git-wiki-main-logo p {
+  margin-bottom: 0px;
 }
 
 .git-wiki-page {
@@ -323,6 +335,21 @@ footer {
   padding-right: 10px;
 }
 
+.git-wiki-search-js input {
+  background-color: $bg-color-light;
+  border: $border-style;
+  border-color: $border-color-light;
+  color: $placeholder-color-light;
+}
+
+@media (prefers-color-scheme: dark) {
+  .git-wiki-search-js input {
+    background-color: $bg-color-dark;
+    border-color: $border-color-dark;
+    color: $placeholder-color-dark;
+  }
+}
+
 @media print, screen and (max-width: 992px) {
   div.wrapper {
     width: auto;
@@ -339,7 +366,7 @@ footer {
 
   .git-wiki-page,
   footer {
-    border: 1px solid #e5e5e5;
+    border: $border-style #e5e5e5;
     border-width: 1px 0;
     padding: 20px 0;
     margin: 0 50px 20px 50px;
@@ -409,10 +436,9 @@ footer {
 .pagination a,
 .pagination span {
   padding: 7px 18px;
-  border: 1px solid #eee;
+  border: $border-style #eee;
   margin-left: -2px;
   margin-right: -2px;
-  background-color: #ffffff;
   display: inline-block;
 }
 
