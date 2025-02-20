@@ -3,6 +3,7 @@
 
     {% include git-wiki/sections/tools.html %}
     <div class="git-wiki-page-main">
+      {% include notes/all.html %}
       {% if site.inc_before_content %}
       {% include {{ site.inc_before_content }} %}
       {% endif %}
